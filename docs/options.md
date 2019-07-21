@@ -10971,7 +10971,7 @@ Automatically beautify Puppet files on save
 | `formatter` | :white_check_mark: | :x: | :white_check_mark: | :x: |
 | `ignore` | :white_check_mark: | :x: | :white_check_mark: | :x: |
 | `indent_size` | :white_check_mark: | :x: | :white_check_mark: | :x: |
-| `max_line_length` | :white_check_mark: | :x: | :white_check_mark: | :x: |
+| `max_line_length` | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: |
 | `multi_line_output` | :white_check_mark: | :x: | :white_check_mark: | :x: |
 | `sort_imports` | :white_check_mark: | :x: | :white_check_mark: | :x: |
 | `style_config` | :white_check_mark: | :x: | :white_check_mark: | :x: |
@@ -11127,11 +11127,11 @@ Indentation size/length (Supported by autopep8, pybeautifier)
 
 **Type**: `integer`
 
-**Supported Beautifiers**:  [`autopep8`](#autopep8)  [`pybeautifier`](#pybeautifier) 
+**Supported Beautifiers**:  [`autopep8`](#autopep8)  [`black`](#black)  [`pybeautifier`](#pybeautifier) 
 
 **Description**:
 
-set maximum allowed line length (Supported by autopep8, pybeautifier)
+set maximum allowed line length (Supported by autopep8, black, pybeautifier)
 
 **Example `.jsbeautifyrc` Configuration**
 
@@ -20119,11 +20119,11 @@ The amount of padding to add next to each line. (Supported by align-yaml)
 
 **Type**: `integer`
 
-**Supported Beautifiers**:  [`autopep8`](#autopep8)  [`pybeautifier`](#pybeautifier) 
+**Supported Beautifiers**:  [`autopep8`](#autopep8)  [`black`](#black)  [`pybeautifier`](#pybeautifier) 
 
 **Description**:
 
-set maximum allowed line length (Supported by autopep8, pybeautifier)
+set maximum allowed line length (Supported by autopep8, black, pybeautifier)
 
 **Example `.jsbeautifyrc` Configuration**
 
@@ -20349,6 +20349,35 @@ Indentation uses tabs, overrides `Indent Size` and `Indent Char` (Supported by b
 ```
 
 
+### black
+
+#####  [Max line length](#max-line-length) 
+
+**Namespace**: `python`
+
+**Key**: `max_line_length`
+
+**Default**: `79`
+
+**Type**: `integer`
+
+**Supported Beautifiers**:  [`autopep8`](#autopep8)  [`black`](#black)  [`pybeautifier`](#pybeautifier) 
+
+**Description**:
+
+set maximum allowed line length (Supported by autopep8, black, pybeautifier)
+
+**Example `.jsbeautifyrc` Configuration**
+
+```json
+{
+    "python": {
+        "max_line_length": 79
+    }
+}
+```
+
+
 ### clang-format
 
 #####  [Config Path](#config-path) 
@@ -20496,11 +20525,11 @@ Indentation size/length (Supported by formatR)
 
 **Type**: `integer`
 
-**Supported Beautifiers**:  [`autopep8`](#autopep8)  [`pybeautifier`](#pybeautifier) 
+**Supported Beautifiers**:  [`autopep8`](#autopep8)  [`black`](#black)  [`pybeautifier`](#pybeautifier) 
 
 **Description**:
 
-set maximum allowed line length (Supported by autopep8, pybeautifier)
+set maximum allowed line length (Supported by autopep8, black, pybeautifier)
 
 **Example `.jsbeautifyrc` Configuration**
 

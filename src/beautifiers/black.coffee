@@ -25,14 +25,17 @@ module.exports = class Black extends Beautifier
     }
   ]
 
-  options: {
-    Python: false
-  }
+  options:
+    Python:
+      max_line_length: true
 
   beautify: (text, language, options, context) ->
     cwd = context.filePath and path.dirname context.filePath
     # `-` as filename reads from stdin
-    @exe("black").run(["-"], {
+    @exe("black").run([
+      ["--line-length", "#{options.max_line_length}"] if options.max_line_length?
+      "-"
+    ], {
       cwd: cwd
       onStdin: (stdin) ->
         stdin.end text
