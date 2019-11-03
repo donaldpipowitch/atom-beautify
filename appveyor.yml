@@ -37,7 +37,7 @@ install:
 
   # elm-format
   - npm install -g elm-format@exp
-  
+
 build_script:
 
   # Install languages to Atom
